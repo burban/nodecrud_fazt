@@ -1,4 +1,4 @@
-// CONFIGURACION DE SERVER
+//   CONFIGURACION DE SERVER
 const express = require('express');
 const morgan = require('morgan');
 const expresshbs = require('express-handlebars');
@@ -28,7 +28,7 @@ app.engine('.hbs', expresshbs({
 app.set('view engine', 'hbs');
 
 
-//MIDDLEWARES
+//  MIDDLEWARES
 app.use(session({
     secret: 'cualquiertexto',
     resave: false,
@@ -43,14 +43,14 @@ app.use(express.json());
 app.use(passport.initialize());
 app.use(passport.session());
 
-//Global Variables
+// Global Variables
 app.use((req, res, next) => {
     app.locals.success = req.flash('success');
     next();
 });
 
 
-//Routers (URL del server)
+// Routers (URL del server)
 app.use('/', require('./routes/desktop'));
 
 app.use(require('./routes'));
