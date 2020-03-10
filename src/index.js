@@ -1,3 +1,4 @@
+// CONFIGURACION DE SERVER
 const express = require('express');
 const morgan = require('morgan');
 const expresshbs = require('express-handlebars');
@@ -61,7 +62,7 @@ app.use('/links', require('./routes/links'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-//Starting the server
+//Iniciando el Server
 app.listen(app.get('port'), () => {
     console.log('Server on port', app.get('port'));
 });
